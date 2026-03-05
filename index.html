@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ระบบยืมวิทยุสื่อสาร (วอ)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📻 ระบบยืม-คืนวิทยุสื่อสาร</h1>
+
+    <!-- ฟอร์มยืม -->
+    <div class="card">
+      <h2>ยืมอุปกรณ์</h2>
+      <label>ชื่อผู้ยืม</label>
+      <input id="borrower" type="text" placeholder="ชื่อ-นามสกุล" />
+      <label>เลือกวอ</label>
+      <select id="deviceSelect"></select>
+      <label>วันที่คืน (กำหนด)</label>
+      <input id="dueDate" type="date" />
+      <button onclick="borrowDevice()">✅ ยืมอุปกรณ์</button>
+    </div>
+
+    <!-- ตารางสถานะ -->
+    <div class="card">
+      <h2>สถานะอุปกรณ์ทั้งหมด</h2>
+      <table id="statusTable">
+        <thead>
+          <tr>
+            <th>วอ หมายเลข</th>
+            <th>ชื่อผู้ยืม</th>
+            <th>วันที่ยืม</th>
+            <th>กำหนดคืน</th>
+            <th>สถานะ</th>
+            <th>การจัดการ</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+
+    <!-- ประวัติ -->
+    <div class="card">
+      <h2>📋 ประวัติการยืม</h2>
+      <table>
+        <thead>
+          <tr><th>วอ</th><th>ผู้ยืม</th><th>ยืม</th><th>คืน</th></tr>
+        </thead>
+        <tbody id="historyBody"></tbody>
+      </table>
+      <button onclick="clearHistory()" style="background:#e74c3c;margin-top:8px">🗑 ล้างประวัติ</button>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
