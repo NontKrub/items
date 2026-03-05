@@ -1,4 +1,4 @@
-const DEVICES = ["วอ-01","วอ-02","วอ-03","วอ-04","วอ-05","วอ-06","วอ-07","วอ-08"];
+const DEVICES = Array.from({length: 50}, (_, i) => `วอ-${String(i + 1).padStart(2, "0")}`);
 
 function loadData() {
   return JSON.parse(localStorage.getItem("walkie_data") || "{}");
